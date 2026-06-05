@@ -611,6 +611,12 @@ footer .creditos {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
+        /* Desligamos o Parallax só no mobile para destravar a foto */
+        background-attachment: scroll !important; 
+        
+        /* Agora a mágica funciona! Altere as percentagens ao seu gosto */
+        background-position: 50% 20% !important; 
     }
 
     header .logo {
