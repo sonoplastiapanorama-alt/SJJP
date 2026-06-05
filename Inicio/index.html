@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IASD Jardim Panorama</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -18,6 +20,7 @@
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#quemsomos">Quem Somos</a></li>
                 <li><a href="#cultos">Cultos</a></li>
+                <li><a href="#oracao">Pedidos de Oração</a></li>
                 <li><a href="#contatos">Contatos</a></li>
             </ul>
         </nav>
@@ -74,17 +77,98 @@
             </ul>
         </section>
         <section id="quemsomos">
-            <h2>Quem Somos</h2>
+            <h2>QUEM SÃO OS ADVENTISTAS?</h2>
+            <p>UM POVO, uma esperança. A Igreja Adventista do Sétimo Dia leva esperança ao mundo para que as pessoas vivam com a certeza de que sua história não termina aqui. Essa é a certeza encontrada ao longo de toda a Bíblia.</p>
+
+            <h3>MISSÃO e serviço</h3>
+            <p>Uma das principais frentes de atuação dos adventistas está justamente no atendimento social e humanitário a milhares de pessoas, o que está em harmonia com o ministério do próprio Cristo.</p>
+
+            <p>Saiba mais no <a href="https://institucional.adventistas.org/pt/" target="_blank" rel="external">site institucional dos Adventistas</a>.</p>
         </section>
         <section id="cultos">
-            <h2>Cultos</h2>
+            <h2>Horários dos Cultos</h2>
+            <div>
+                <article>
+                    <h3>Sábado</h3>
+                    <p><strong>[09:00h - 10:10h]</strong> - Escola Sabatina</p>
+                    <ul>
+                        <li>Louvor</li>
+                        <li>Estudo da Bíblia e Lição em classes</li>
+                    </ul>
+                    <p><strong>[10:10h - 11:30h]</strong> - Culto Divino</p>
+                    <ul>
+                        <li>Ofertório</li>
+                        <li>Momento das Crianças</li>
+                        <li>Anúncios</li>
+                        <li>Momento de Oração</li>
+                        <li>Louvor</li>
+                        <li>Sermão</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Domingo</h3>
+                    <p><strong>07:00h</strong> - Culto de Poder</p>
+                    <p><strong>[19:30h - 20:30h]</strong> - Culto</p>
+                    <ul>
+                        <li>Louvor</li>
+                        <li>Ofertório</li>
+                        <li>Momento de Oração</li>
+                        <li>Sermão</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Quarta-feira</h3>
+                    <p><strong>18:30h</strong> - Culto de Poder</p>
+                    <p><strong>[19:30h - 20:30h]</strong> - Culto</p>
+                    <ul>
+                        <li>Louvor</li>
+                        <li>Momento de Oração</li>
+                        <li>Sermão</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <section id="oracao">
+            <h2>Pedidos de Oração</h2>
+            <p>Estamos prontos para orar por você. Compartilhe seu pedido de forma confidencial abaixo:</p>
+
+            <form action="#" method="POST">
+                <label for="txtnome-oracao">Seu Nome (ou Anônimo):</label>
+                <input type="text" id="txtnome-oracao" name="nome_oracao" placeholder="Digite seu nome ou 'Anônimo'" required minlength="3">
+
+                <label for="txtemail-oracao">Seu E-mail:</label>
+                <input type="email" id="txtemail-oracao" name="email_oracao" placeholder="exemplo@email.com" required>
+
+                <label for="txtpedido-oracao">Seu Motivo de Oração:</label>
+                <textarea id="txtpedido-oracao" name="pedido_oracao" rows="5" placeholder="Escreva aqui o seu motivo de oração ou agradecimento..." required minlength="10" maxlength="600"></textarea>
+
+                <button type="submit">Enviar Pedido de Oração</button>
+            </form>
         </section>
         <section id="contatos">
-            <h2>Contatos</h2>
+            <h2>Fale Conosco</h2>
+            <p>Ficou com alguma dúvida, precisa de aconselhamento ou gostaria de solicitar um estudo bíblico? Estamos aqui para ouvir você!</p>
+
+            <address>
+                <p><strong>Endereço:</strong> Rua Serra do Mar, nº 740 - Jardim Panorama, Ipatinga/MG</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/55DD999999999" target="_blank" rel="external">(DD) 99999-9999</a></p>
+                <p><strong>E-mail:</strong> <a href="mailto:contato@iasdjardimpanorama.org">contato@iasdjardimpanorama.org</a></p>
+            </address>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.324055935478!2d-42.538182299999995!3d-19.465141799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb00030f2622ef1%3A0x47d5bcfa7929675f!2sR.%20Serra%20do%20Mar%2C%20740%20-%20Jardim%20Panorama%2C%20Ipatinga%20-%20MG%2C%2035164-238!5e1!3m2!1spt-BR!2sbr!4v1780617467618!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
     <footer>
         <p>&copy; 2026 Igreja Adventista do Sétimo Dia - Jardim Panorama. Todos os direitos reservados.</p>
+        
+        <div class="redes-sociais-footer">
+            <a href="https://www.instagram.com/jardimpanoramaiasd?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="external">Instagram</a> | 
+            <a href="https://www.facebook.com/share/1EHcf79icA/" target="_blank" rel="external">Facebook</a>
+        </div>
+
+        <p class="creditos">Desenvolvido para a glória de Deus.</p>
     </footer>
 </body>
 

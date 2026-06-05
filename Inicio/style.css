@@ -1,0 +1,40 @@
+
+/* reset global e config base */
+
+/* O asterisco (*) seleciona TODOS os elementos da página */
+* {
+    margin: 0; /* Tira todas as margens externas padrão */
+    padding: 0; /* Tira todos os espaçamentos internos padrão */
+    box-sizing: border-box; /* A regra mágica do CSS moderno */
+}
+
+/* Configuração base do corpo da página */
+body {
+    /* Define uma fonte limpa e sem serifa padrão*/
+    font-family: Arial, Helvetica, sans-serif; 
+    
+    /* Espaçamento agradável entre as linhas de texto para facilitar a leitura */
+    line-height: 1.6; 
+    
+    /* Cor de fundo padrão (branco) e cor do texto (cinza escuro, mais suave que o preto puro) */
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Garante que nenhuma imagem vaze para fora da tela no celular */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tira o sublinhado feio padrão dos links e define a cor herdada */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Tira as bolinhas padrão das listas que vamos usar como menus ou botões */
+ul {
+    list-style: none;
+}
