@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clube de Aventureiros Jardim do Vale</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(180deg, #f5f7fa, #e8f0ff);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e88e5, #43a047);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #1e88e5;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #43a047;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .programacao {
+      background: #ffffff;
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .programacao ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .programacao li {
+      padding: 10px 0;
+      font-size: 1rem;
+    }
+
+    .classes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .classe {
+      background: linear-gradient(135deg, #ffeb3b, #ffc107);
+      padding: 20px;
+      border-radius: 20px;
+      width: 220px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .lideres {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .lider {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .lider h4 {
+      margin-top: 10px;
+      color: #1e88e5;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .foto {
+      background: #ddd;
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .contato {
+      background: linear-gradient(135deg, #43a047, #1e88e5);
+      color: white;
+      border-radius: 25px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contato p {
+      margin: 10px 0;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="AVT_logo.png" alt="Logo Clube Jardim do Vale" style="max-width:120px; margin-bottom:15px;">
+    <h1>Clube de Aventureiros Jardim do Vale</h1>
+    <p>Um lugar especial para crianças crescerem com Jesus, aprenderem valores e se divertirem.</p>
+  </header>
+
+  <section>
+    <h2>Quem Somos</h2>
+    <div class="card">
+      <img src="img/quem-somos.png" alt="Aventureiros reunidos" style="width:100%; border-radius:15px; margin-bottom:15px;">
+      <p>Somos o Clube de Aventureiros da Igreja Adventista do Sétimo Dia, atendendo crianças de 6 a 9 anos. Nosso objetivo é ajudar no desenvolvimento espiritual, social, físico e mental em um ambiente cristão, seguro e acolhedor.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>O Que Fazemos</h2>
+    <div class="card-grid">
+      <div class="card"><img src="img/biblia.png" alt="Bíblia" style="width:60px; margin-bottom:10px;"><h3>📖 Bíblia</h3><p>Histórias bíblicas e momentos espirituais.</p></div>
+      <div class="card"><img src="img/arte.png" alt="Criatividade" style="width:60px; margin-bottom:10px;"><h3>🎨 Criatividade</h3><p>Artes, músicas e atividades manuais.</p></div>
+      <div class="card"><img src="img/natureza.png" alt="Natureza" style="width:60px; margin-bottom:10px;"><h3>🌱 Natureza</h3><p>Contato com a criação de Deus.</p></div>
+      <div class="card"><img src="img/amizade.png" alt="Amizade" style="width:60px; margin-bottom:10px;"><h3>🤝 Amizade</h3><p>Aprendendo a conviver e ajudar o próximo.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Programação</h2>
+    <div class="programacao">
+      <p><strong>Reuniões:</strong> Sábados às 15h</p>
+      <ul>
+        <li>✔ Brincadeiras educativas</li>
+        <li>✔ Louvor infantil</li>
+        <li>✔ Atividades das classes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Classes</h2>
+    <div class="classes">
+      <div class="classe">Abelhinhas Laboriosas</div>
+      <div class="classe">Luminares</div>
+      <div class="classe">Edificadores</div>
+      <div class="classe">Mãos Ajudadoras</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Liderança</h2>
+    <div class="lideres">
+      <div class="lider"><h4>Diretor(a)</h4><p>Responsável geral</p></div>
+      <div class="lider"><h4>Instrutor(a)</h4><p>Atividades e classes</p></div>
+      <div class="lider"><h4>Apoio</h4><p>Cuidado e segurança</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Galeria</h2>
+    <div class="galeria">
+      <img src="avt1.jpg" alt="Atividade dos aventureiros" style="width:100%; border-radius:15px;">
+      <img src="avt2.jpg" alt="Brincadeiras educativas" style="width:100%; border-radius:15px;">
+      <img src="avt3.jpg" alt="Momento espiritual" style="width:100%; border-radius:15px;">
+    </div>
+  </section>
+
+  <section class="contato">
+    <h2>Contato</h2>
+    <p>📍 Igreja Adventista do Sétimo Dia</p>
+    <p>📞 WhatsApp: (00) 00000-0000</p>
+    <p>📧 Email: aventureiros@igreja.com</p>
+  </section>
+
+  <footer>
+    <p>Clube de Aventureiros Jardim do Vale • Igreja Adventista do Sétimo Dia</p>
+  </footer>
+
+</body>
+</html>

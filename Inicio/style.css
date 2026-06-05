@@ -1,0 +1,572 @@
+/* ----reset global e config base---- */
+/* O asterisco (*) seleciona TODOS os elementos da página */
+* {
+    margin: 0;
+    /* Tira todas as margens externas padrão */
+    padding: 0;
+    /* Tira todos os espaçamentos internos padrão */
+    box-sizing: border-box;
+    /* A regra mágica do CSS moderno */
+}
+
+/* configuracao para o scroll da pagina */
+html {
+    scroll-behavior: smooth;
+    /* faz a pagina rolar suavemente ao clicar nos links */
+}
+
+/* ajuste para a ancora nao sumir atras do menu */
+section {
+    scroll-margin-top: 60px;
+    /* cria uma folga para a secao parar exatamente abaixo do menu */
+}
+
+/* Configuração base do corpo da página */
+body {
+    /* Define uma fonte limpa e sem serifa padrão*/
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Espaçamento agradável entre as linhas de texto para facilitar a leitura */
+    line-height: 1.6;
+
+    /* Cor de fundo padrão (branco) e cor do texto (cinza escuro, mais suave que o preto puro) */
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Garante que nenhuma imagem vaze para fora da tela no celular */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tira o sublinhado feio padrão dos links e define a cor herdada */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Tira as bolinhas padrão das listas que vamos usar como menus ou botões */
+ul {
+    list-style: none;
+}
+
+/* ----cabeçalho(Parallax)---- */
+header {
+    /* adicionado o linear-gradient para dar o mesmo efeito escurecido do formulario */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img/fundo/55304225571_1c8d7f2973_b.jpg');
+
+    background-size: cover;
+    /* Faz a foto esticar para cobrir todo o espaço sem achatar */
+    background-position: center 80%;
+    /* Centralizado na horizontal, colado no topo na vertical */
+
+    background-attachment: fixed;
+    /* fundo fixo */
+
+    /* Altura e Layout */
+    min-height: 60vh;
+    /* Faz o cabeçalho ocupar pelo menos 60% da altura da tela */
+    display: flex;
+    /* Começa a preparar para alinhar o logo e o menu */
+    flex-direction: column;
+    /* Coloca os itens em pé (logo em cima, menu embaixo) */
+    align-items: center;
+    /* Centraliza tudo no meio da tela */
+    justify-content: center;
+    /* Centraliza no meio verticalmente também */
+
+    /*Cor do texto */
+    color: white;
+}
+
+/* Cobrindo a imagem */
+main {
+    /* O fundo sólido*/
+    background-color: #ffffff;
+
+    /* Garante que o conteúdo fique uma camada acima do cabeçalho */
+    position: relative;
+    z-index: 10;
+}
+
+/* ----menu de navegacao horizontal, menor e colante---- */
+nav {
+    position: sticky; /* fica onde esta e congela no topo quando o scroll chega nele */
+    top: 0; /* trava no topo absoluto quando ativado */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.90); /* fundo escuro confortavel */
+    padding: 10px 0; /* padding reduzido para o menu ficar bem menor */
+    z-index: 100; /* garante que fique por cima de tudo ao rolar */
+}
+
+/* alinhamento dos links */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* espacamento menor entre as opcoes */
+}
+
+/* estilo dos links do menu */
+nav a {
+    font-size: 13px; /* fonte menor para ficar discreto */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff; /* garante que o texto do menu seja branco */
+    transition: color 0.2s;
+}
+
+/* efeito de passar o mouse */
+nav a:hover {
+    color: #d4af37; /* dourado padrao da igreja */
+}
+
+/* ----secao de ministerios - botoes de imagem com sombra de contorno---- */
+/* centraliza o titulo da secao e da um espacamento */
+#inicio h2 {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+/* organiza os blocos de ministerios lado a lado */
+#inicio ul {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 25px; 
+    padding: 20px;
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+/* largura para o texto alinhar perfeitamente abaixo da imagem */
+#inicio li {
+    width: 110px; 
+    text-align: center;
+}
+
+/* empilha a imagem e o texto em pe */
+#inicio li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: inherit;
+}
+
+/* a propria imagem solta vira o botao com sombra no formato dela */
+#inicio li a img {
+    width: 80px; 
+    height: 80px;
+    object-fit: contain; /* mantem o formato original do logo sem achatar */
+    margin-bottom: 12px;
+    
+    /* a magica do contorno: drop-shadow segue o desenho real da imagem e nao um quadrado */
+    filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.20)); 
+    transition: transform 0.2s, filter 0.2s; 
+}
+
+/* efeito ao passar o mouse por cima */
+#inicio li a:hover img {
+    transform: scale(1.08); /* a imagem cresce suavemente */
+    
+    /* aumenta a sombra acompanhando o contorno e dando profundidade */
+    filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.35)); 
+}
+
+/* estilo do texto logo abaixo da imagem */
+#inicio h3 {
+    font-size: 11px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 1.3;
+}
+
+/* ----secao quem somos - centralizada e com cards---- */
+/* centraliza o conteudo da secao inteira */
+#quemsomos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f4f6f8; /* um fundo cinza bem claro para o card branco destacar */
+}
+
+#quemsomos h2 {
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+/* container para alinhar os cards lado a lado ou em pé */
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* o estilo do card (o efeito que o bootstrap daria) */
+.card {
+    background-color: #ffffff; /* fundo branco do card */
+    padding: 30px;
+    border-radius: 12px; /* bordas arredondadas elegantes */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* uma sombra bem suave para dar profundidade */
+    flex: 1;
+    min-width: 280px; /* garante que o card nao esmague em telas menores */
+    max-width: 450px; /* limita o tamanho maximo de cada card */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* espaco entre o h3 e o p dentro do card */
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #2b3d52; /* usa o mesmo azul dos seus botoes para criar identidade */
+    text-transform: uppercase;
+}
+
+.card p {
+    font-size: 15px;
+    color: #555555;
+    text-align: justify; /* deixa o texto do bloco alinhado e elegante */
+}
+
+/* estilo para o link externo que ficou embaixo dos cards */
+.link-saber-mais {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.link-saber-mais a {
+    color: #2b3d52;
+    font-weight: bold;
+    text-decoration: underline; /* deixa o sublinhado apenas neste link de texto */
+}
+
+.link-saber-mais a:hover {
+    color: #d4af37; /* muda para dourado ao passar o mouse */
+}
+
+/* ----secao de cultos - grade de tabelas lado a lado---- */
+/* centraliza a secao e aplica espacamento */
+#cultos {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#cultos h2 {
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+/* container para colocar as tabelas lado a lado */
+.grade-cultos {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* estilo de cada coluna de dia */
+.dia-culto {
+    flex: 1;
+    min-width: 280px; 
+    padding: 0 30px;
+    margin-bottom: 30px;
+    text-align: left; 
+}
+
+/* a linha divisoria vertical entre os dias */
+.dia-culto:not(:last-child) {
+    border-right: 1px solid #e0e0e0; 
+}
+
+.dia-culto h3 {
+    font-size: 20px;
+    color: #2b3d52;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #2b3d52; 
+    padding-bottom: 5px;
+}
+
+.dia-culto table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+/* linha do titulo e do horario lado a lado */
+.linha-topo td {
+    padding-top: 15px; /* espaco antes de comecar o item */
+    font-size: 15px;
+    vertical-align: bottom;
+}
+
+/* empurra o horario para a extremidade direita da linha */
+.txt-hora {
+    text-align: right;
+    font-size: 13px;
+    color: #666666;
+    white-space: nowrap;
+}
+
+/* linha que joga a lista para baixo ocupando todo o espaco */
+.linha-lista td {
+    padding-bottom: 15px; /* espaco de respiro antes do proximo item */
+    border-bottom: 1px dashed #f0f0f0; /* linha pontilhada sutil separando os cultos do mesmo dia */
+}
+
+/* remove a linha pontilhada do ultimo item de cada tabela */
+.linha-lista:last-child td {
+    border-bottom: none;
+}
+
+/* estilo sutil para as subatividades */
+.detalhe {
+    font-size: 13px;
+    color: #666666;
+    display: inline-block;
+    margin-top: 4px;
+    padding-left: 5px;
+}
+
+/* ----secao de oracao - formulario em card flutuante com imagem de fundo---- */
+#oracao {
+    padding: 80px 20px; /* aumentei um pouco o espacamento para valorizar a imagem */
+    text-align: center;
+    
+    /* aplicando a imagem de fundo com uma pelicula escura por cima para dar leitura no texto */
+    /* substitua 'sua-imagem-oracao.jpg' pelo caminho real da foto (ex: uma foto de maos juntas ou da igreja) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img/fundo/55304226581_648154a4a4_b.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* a magica do efeito parallax igual ao cabecalho */
+    
+    color: #ffffff; /* muda o titulo para branco para contrastar com a foto */
+}
+
+#oracao h2 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+#oracao p {
+    font-size: 15px;
+    color: #e0e0e0; /* um cinza bem clarinho para o texto nao brigar com o h2 */
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* o card branco flutuante */
+#oracao form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #ffffff; /* fundo branco do card */
+    padding: 40px 30px;
+    border-radius: 12px;
+    
+    /* a magica do efeito flutuante: uma sombra mais escura e espalhada para dar profundidade */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); 
+    
+    display: flex;
+    flex-direction: column;
+}
+
+#oracao label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2b3d52;
+    margin-bottom: 6px;
+    margin-top: 15px;
+}
+
+#oracao label:first-of-type {
+    margin-top: 0;
+}
+
+#oracao input,
+#oracao textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #333333;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#oracao textarea {
+    resize: vertical;
+}
+
+#oracao input:focus,
+#oracao textarea:focus {
+    outline: none;
+    border-color: #2b3d52;
+    box-shadow: 0 0 5px rgba(43, 61, 82, 0.2);
+}
+
+#oracao button {
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #2b3d52;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#oracao button:hover {
+    background-color: #1e2b3a;
+}
+
+#oracao button:active {
+    transform: scale(0.98);
+}
+
+/* ----secao de contatos - colunas organizadas---- */
+#contatos {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff; /* fundo branco para limpar o visual depois do formulario */
+}
+
+#contatos h2 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.intro-contatos {
+    font-size: 15px;
+    color: #555555;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* container principal que divide as duas colunas */
+.bloco-contatos {
+    display: flex;
+    flex-wrap: wrap; /* quebra linha automaticamente no celular */
+    gap: 40px; /* espaco generoso entre o texto e o mapa */
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left; /* alinha o conteudo interno a esquerda */
+}
+
+/* configuracao da coluna de textos */
+.info-contatos {
+    flex: 1;
+    min-width: 280px; /* impede que o texto fique esmagado */
+}
+
+.item-contato {
+    margin-bottom: 25px; /* espacamento entre os blocos de contato */
+}
+
+.item-contato strong {
+    display: flex; /* alterado para flex para alinhar o icone perfeitamente com o texto */
+    align-items: center; /* centraliza o icone verticalmente com a palavra */
+    gap: 8px; /* cria um espacamento perfeito de 8px entre o icone e o texto */
+    font-size: 14px;
+    color: #2b3d52; 
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.item-contato p, 
+.item-contato a {
+    font-size: 16px;
+    color: #333333;
+}
+
+/* destaque visual para os links clicaveis (whatsapp e email) */
+.item-contato a {
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.item-contato a:hover {
+    color: #d4af37; /* muda para dourado ao passar o mouse */
+}
+
+/* configuracao da coluna do mapa */
+.mapa-contatos {
+    flex: 1;
+    min-width: 320px;
+}
+
+/* deixa o mapa quadrado com bordas arredondadas modernas acompanhando os cards */
+.mapa-contatos iframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* sombra sutil no mapa */
+}
+
+/* ----rodape do site centralizado---- */
+footer {
+    background-color: #1e2b3a; /* azul escuro fechado para dar acabamento */
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center; /* centraliza todo o texto */
+    display: flex;
+    flex-direction: column; /* empilha as linhas de texto */
+    align-items: center; /* garante a centralizacao horizontal perfeita */
+    gap: 15px; /* espacamento igual entre os blocos de texto */
+}
+
+footer p {
+    font-size: 13px;
+    color: #cccccc; /* cinza claro para leitura confortavel */
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+/* organizacao dos links de redes sociais */
+.redes-sociais-footer {
+    font-size: 14px;
+    color: #555555; /* cor sutil para a barra divisoria | */
+}
+
+.redes-sociais-footer a {
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0 8px; /* espacamento nas laterais dos links */
+    transition: color 0.2s;
+}
+
+/* efeito ao passar o mouse nas redes sociais */
+.redes-sociais-footer a:hover {
+    color: #d4af37; /* dourado oficial do tema */
+}
+
+/* estilo dos creditos institucionais */
+footer .creditos {
+    font-size: 11px;
+    font-style: italic;
+    color: #888888;
+    margin-top: 5px;
+}
