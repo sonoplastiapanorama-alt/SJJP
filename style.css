@@ -414,7 +414,7 @@ nav a:hover {
     margin-top: 5px;
 }
 
-/* ----secao de oracao - Efeito Vidro sobreposta à foto---- */
+/* ----secao de oracao - Efeito Vidro com Google Forms---- */
 #oracao {
     padding: 120px 20px; 
     background-image: url('Inicio/img/fundo/55304226581_648154a4a4_b.jpg');
@@ -426,7 +426,6 @@ nav a:hover {
     justify-content: center;
 }
 
-/* Película Verde Vinha forte direto na foto */
 #oracao::before {
     content: '';
     position: absolute;
@@ -440,7 +439,7 @@ nav a:hover {
     text-align: center;
     color: #ffffff;
     width: 100%;
-    max-width: 600px;
+    max-width: 650px; /* Alargamos um pouco para o Google Forms caber melhor */
 }
 
 .oracao-conteudo h2 {
@@ -460,54 +459,17 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.05); 
     backdrop-filter: blur(8px); 
     border: 1px solid rgba(255, 255, 255, 0.2); 
-    padding: 40px 30px;
+    padding: 20px; /* Reduzimos o padding para o formulário encostar mais nas bordas */
     border-radius: 15px;
     display: flex;
     flex-direction: column;
 }
 
-.form-vidro textarea {
+/* Garante que o Google Forms seja responsivo */
+.google-wrapper iframe {
     width: 100%;
-    padding: 15px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 8px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 15px;
-    color: #ffffff;
-    resize: vertical;
-    transition: all 0.3s;
-}
-
-.form-vidro textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.form-vidro textarea:focus {
-    outline: none;
-    border-color: #8B5733; /* Foco Marrom Madeira */
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.form-vidro button {
-    margin-top: 25px;
-    padding: 16px;
-    background-color: #8B5733; /* Botão Marrom Madeira */
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.form-vidro button:hover {
-    background-color: #ffffff; 
-    color: #8B5733;
+    border-radius: 8px; /* Arredonda os cantos internos do formulário do Google */
+    background-color: transparent;
 }
 
 /* ----secao de contatos - Textos Limpos---- */
