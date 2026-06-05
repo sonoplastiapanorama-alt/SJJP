@@ -570,3 +570,56 @@ footer .creditos {
     color: #888888;
     margin-top: 5px;
 }
+
+/* Ajustes para Celulares e Tablets - responsividade */
+
+/* A regra abaixo só será ativada em telas menores que 768px de largura */
+@media (max-width: 768px) {
+    
+    /* cabeçalho reduz o logo para não vazar a tela */
+    header .logo img {
+        width: 90% !important; /* Ignora os 500px do HTML e ocupa 90% da tela */
+        max-width: 320px; /* Mas não deixa passar de 320px para não ficar gigante */
+    }
+
+    /* menu, Permite quebrar linha e reduz a fonte */
+    nav ul {
+        flex-wrap: wrap; /* Se os links não couberem, eles pulam para a linha de baixo */
+        gap: 8px 15px; /* Reduz o espaço entre os botões */
+        padding: 0 10px;
+    }
+    
+    nav a {
+        font-size: 11px; /* Fonte levemente menor para caber melhor na tela */
+    }
+
+    /* espaçamento, Diminui os "buracos" vazios nas seções no celular */
+    section {
+        padding: 40px 15px !important;
+    }
+    
+    #oracao {
+        padding: 50px 15px !important;
+    }
+
+    /* horarios, Muda a linha divisória do lado direito para a parte de baixo */
+    .dia-culto {
+        padding: 0 10px; /* Reduz o respiro lateral interno */
+    }
+
+    .dia-culto:not(:last-child) {
+        border-right: none; /* Tira a linha em pé que separava os lados */
+        border-bottom: 1px solid #e0e0e0; /* Cria uma linha deitada embaixo */
+        padding-bottom: 30px; /* Dá espaço para não colar a linha no texto */
+        margin-bottom: 30px;
+    }
+
+    /* contatos, Garante que o mapa não quebre o layout */
+    .mapa-contatos {
+        min-width: 100%; /* Força o mapa a encolher para caber na tela do celular */
+    }
+    
+    .bloco-contatos {
+        gap: 20px; /* Diminui a distância entre o texto de contatos e o mapa */
+    }
+}
