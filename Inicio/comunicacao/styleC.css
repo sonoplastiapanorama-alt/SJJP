@@ -1,0 +1,238 @@
+/* ---- reset e cores base ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFFFFF;
+}
+
+/* ---- cabecalho total (sem espacos) ---- */
+.header-interno {
+    width: 100%;
+    min-height: 22vh;
+    /* Gradiente usando a nova paleta: Azul Oceano para Verde Água */
+    background-image: linear-gradient(135deg, rgba(38, 142, 166, 0.8), rgba(86, 166, 158, 0.8)), url('../img/fundo/55304617665_41e4b1d930_b.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 40px; 
+}
+
+.header-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-comunicacao {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #ffffff;
+}
+
+.icone-comunicacao {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.titulo-comunicacao h1 {
+    font-family: 'Lora', serif;
+    font-size: 38px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.logo-pequena {
+    width: 120px;
+}
+
+/* ---- secao intro ---- */
+.fundo-creme {
+    background-color: #F7F4EE; 
+    padding-bottom: 60px;
+}
+
+.intro-secao {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+.intro-secao h2 {
+    font-size: 28px;
+    color: #268EA6;
+    text-transform: uppercase;
+}
+
+.linha-decorativa-centro {
+    width: 60px;
+    height: 4px;
+    background-color: #F2B807; 
+    margin: 15px auto;
+}
+
+.link-voltar {
+    color: #56A69E;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* ---- container canva ---- */
+#sessao-canva {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.canva-embed-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(38, 142, 166, 0.2);
+}
+
+.canva-embed-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: none;
+}
+
+.legenda-canva {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #5C5551; 
+}
+
+.legenda-canva i {
+    color: #268EA6; 
+    margin-right: 5px;
+}
+
+.legenda-canva a {
+    color: #268EA6; 
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 2px solid #268EA6;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+}
+
+.legenda-canva a:hover {
+    color: #56A69E; 
+    border-color: #56A69E;
+}
+
+/* ---- mural de avisos ---- */
+#mural-avisos {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.mural-grid {
+    display: grid;
+    /* O minmax protege o layout no PC, mas forçamos 1 coluna no celular */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.aviso-card {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 15px;
+    border-top: 5px solid #56A69E;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.data-aviso {
+    color: #F2B807;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.aviso-card h3 {
+    color: #268EA6;
+    margin-bottom: 10px;
+}
+
+/* ---- rodape ---- */
+footer {
+    background-color: #268EA6;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.redes-sociais-footer a {
+    color: #F2B807;
+    font-weight: 700;
+    margin: 0 10px;
+}
+
+/* ---- responsivo (telemovel) ---- */
+@media (max-width: 768px) {
+    .header-interno {
+        padding: 30px 20px;
+        min-height: 20vh;
+    }
+    
+    .header-conteudo {
+        flex-direction: column-reverse; /* Coloca o logo em cima e o título em baixo */
+        justify-content: center;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .titulo-comunicacao {
+        flex-direction: column; /* Empilha o ícone redondo em cima do texto "Comunicação" */
+        gap: 10px;
+    }
+    
+    .icone-comunicacao {
+        width: 70px; 
+        height: 70px;
+    }
+    
+    .titulo-comunicacao h1 {
+        font-size: 28px;
+    }
+
+    .logo-pequena {
+        width: 100px; 
+    }
+
+    /* Reduz o respiro lateral para ganhar espaço útil na tela pequena */
+    #sessao-canva, 
+    #mural-avisos {
+        padding: 0 15px;
+    }
+
+    .intro-secao {
+        padding: 40px 15px 20px;
+    }
+
+    .mural-grid {
+        grid-template-columns: 1fr; /* Força exatamente 1 card por linha no celular */
+    }
+}
