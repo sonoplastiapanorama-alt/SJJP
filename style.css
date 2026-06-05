@@ -55,7 +55,7 @@ ul {
 /* ----cabeçalho(Parallax)---- */
 header {
     /* adicionado o linear-gradient para dar o mesmo efeito escurecido do formulario */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img/fundo/55304225571_1c8d7f2973_b.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('Inicio/img/fundo/55304225571_1c8d7f2973_b.jpg');
 
     background-size: cover;
     /* Faz a foto esticar para cobrir todo o espaço sem achatar */
@@ -348,7 +348,7 @@ nav a:hover {
     
     /* aplicando a imagem de fundo com uma pelicula escura por cima para dar leitura no texto */
     /* substitua 'sua-imagem-oracao.jpg' pelo caminho real da foto (ex: uma foto de maos juntas ou da igreja) */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img/fundo/55304226581_648154a4a4_b.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('Inicio/img/fundo/55304226581_648154a4a4_b.jpg');
     
     background-size: cover;
     background-position: center;
