@@ -10,7 +10,8 @@ html {
 }
 
 section {
-    scroll-margin-top: 0px;
+    /* Pára sempre a 12% do topo, independentemente do tamanho do monitor */
+    scroll-margin-top: 0vh; 
 }
 
 /* Configuração base do corpo da página (Branco Parede) */
@@ -265,12 +266,17 @@ nav a:hover {
 .linha-decorativa {
     width: 60px;
     height: 4px;
-    background-color: #8B5733; /* Tracinho Marrom Madeira */
-    margin-bottom: 20px;
+    background-color: #8B5733; 
+    
+    /* Aumente ou diminua este valor para afastar a linha do título acima */
+    margin-top: 15px; 
+    
+    /* Controla a distância entre a linha e os textos/cards que vêm abaixo dela */
+    margin-bottom: 50px; 
 }
 
 #quemsomos h2 {
-    margin-bottom: 60px;
+    margin-bottom: 0px;
     text-transform: uppercase;
     font-size: 26px;
     color: #234230; /* Verde Vinha */
@@ -665,6 +671,7 @@ footer .creditos {
     
     /* Estado FECHADO: Vira um botão circular/pílula pequena */
     nav.nav-flutuante {
+        top: 5px;
         width: 60px; 
         padding: 12px 0;
         border: 1px solid rgba(139, 87, 51, 0.3); 
@@ -754,10 +761,12 @@ footer .creditos {
         border: 1px solid rgba(139, 87, 51, 0.6); 
     }
 
-    /* SEÇÕES GERAIS: Ajuste de respiro lateral e ancoragem perfeita */
+    /* SEÇÕES GERAIS: Ajuste de respiro lateral e ancoragem universal */
     section { 
         padding: 50px 15px !important; 
-        scroll-margin-top: 350px; /* Cria uma "parede invisível" que freia a rolagem antes de o menu cobrir o título */
+        
+        /* Pára sempre a 10% do topo da tela do telemóvel do utilizador */
+        scroll-margin-top: 0vh; 
     }
 
     .quem-somos-grid { 
