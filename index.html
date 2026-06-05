@@ -25,7 +25,12 @@
     </header>
 
     <nav>
-        <ul>
+        <button class="menu-toggle" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+            <span class="menu-texto">Menu</span>
+        </button>
+
+        <ul class="menu-links">
             <li><a href="#inicio">Início</a></li>
             <li><a href="#quemsomos">Quem Somos</a></li>
             <li><a href="#cultos">Cultos</a></li>
@@ -37,62 +42,75 @@
     <main>
         <section id="inicio">
             <h2>Ministérios</h2>
-            <ul>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/JA.png" alt="MJA">
-                        <h3>Ministério Jovem Adventista</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/ASA.png" alt="ASA">
-                        <h3>Ação Solidária Adventista</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/AVT.png" alt="Clube de Aventureiros">
-                        <h3>Clube de Aventureiros</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/DBV.svg" alt="Clube dos Desbravadores">
-                        <h3>Clube dos Desbravadores</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/cominicacao.png" alt="Comunicação">
-                        <h3>Comunicação</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/MC.jpg" alt="Ministério da Criança">
-                        <h3>Ministério da Criança</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/logo-familia.png" alt="Ministério da Família">
-                        <h3>Ministério da Família</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/MM.png" alt="Ministério da Mulher">
-                        <h3>Ministério da Mulher</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="emBreve.html">
-                        <img src="Inicio/img/botoes/MMu.png" alt="Ministério da Música">
-                        <h3>Ministério da Música</h3>
-                    </a>
-                </li>
-            </ul>
+            
+            <div class="carrossel-wrapper">
+                
+                <button class="seta-carrossel esquerda" aria-label="Rolar para a esquerda">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <ul class="carrossel-ministerios" id="listaMinisterios">
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/JA.png" alt="MJA">
+                            <h3>Ministério Jovem Adventista</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/ASA.png" alt="ASA">
+                            <h3>Ação Solidária Adventista</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/AVT.png" alt="Clube de Aventureiros">
+                            <h3>Clube de Aventureiros</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/DBV.svg" alt="Clube dos Desbravadores">
+                            <h3>Clube dos Desbravadores</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/cominicacao.png" alt="Comunicação">
+                            <h3>Comunicação</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/MC.jpg" alt="Ministério da Criança">
+                            <h3>Ministério da Criança</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/logo-familia.png" alt="Ministério da Família">
+                            <h3>Ministério da Família</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/MM.png" alt="Ministério da Mulher">
+                            <h3>Ministério da Mulher</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="emBreve.html">
+                            <img src="Inicio/img/botoes/MMu.png" alt="Ministério da Música">
+                            <h3>Ministério da Música</h3>
+                        </a>
+                    </li>
+                </ul>
+
+                <button class="seta-carrossel direita" aria-label="Rolar para a direita">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
         </section>
 
         <section id="quemsomos">
@@ -281,6 +299,7 @@
             <a href="https://www.facebook.com/share/1EHcf79icA/" target="_blank" rel="external">Facebook</a>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

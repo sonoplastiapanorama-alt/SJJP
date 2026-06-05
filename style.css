@@ -74,17 +74,55 @@ nav {
     position: sticky; 
     top: 0; 
     width: 100%;
-    /* Fundo Verde Vinha */
+    max-width: 100%; 
+    border-radius: 0px; 
     background-color: rgba(35, 66, 48, 0.98); 
     padding: 15px 0; 
     z-index: 100; 
     backdrop-filter: blur(10px);
+    margin: 0 auto; 
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-nav ul {
+/* O botão do menu mobile começa escondido no PC */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    gap: 10px;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #8B5733;
+}
+
+/* O estado do menu quando rola para baixo (Dynamic Island) */
+nav.nav-flutuante {
+    top: 15px; 
+    width: 90%; 
+    max-width: 700px; 
+    border-radius: 50px; 
+    padding: 12px 0; 
+    box-shadow: 0 15px 30px rgba(22, 43, 31, 0.3); 
+    background-color: rgba(35, 66, 48, 0.85); 
+}
+
+nav ul.menu-links {
     display: flex;
     justify-content: center;
     gap: 30px; 
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
 }
 
 nav a {
@@ -98,12 +136,12 @@ nav a {
 }
 
 nav a:hover {
-    color: #8B5733; /* Hover Marrom Madeira */
+    color: #8B5733; 
 }
 
-/* ----secao de ministerios---- */
+/* ----secao de ministerios (Carrossel Interativo)---- */
 #inicio {
-    padding: 80px 20px 40px;
+    padding: 80px 20px 40px 20px;
 }
 
 #inicio h2 {
@@ -115,27 +153,84 @@ nav a:hover {
     letter-spacing: 2px;
 }
 
-#inicio ul {
+/* Caixa principal que segura a lista e as setas */
+.carrossel-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 40px; 
-    max-width: 1100px; 
-    margin: 0 auto; 
+    align-items: center;
 }
 
-#inicio li {
+/* Os botões das setas flutuantes */
+.seta-carrossel {
+    position: absolute;
+    top: 40%; /* Alinhado sensivelmente a meio das imagens */
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+    border: 2px solid #8B5733; /* Marrom Madeira */
+    color: #8B5733;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Faz o botão ser uma bolinha perfeita */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(35, 66, 48, 0.15); /* Sombra Verde Vinha suave */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o rato (Hover) */
+.seta-carrossel:hover {
+    background-color: #8B5733;
+    color: #FFFFFF;
+    transform: translateY(-50%) scale(1.1); /* Dá um zoom sutil */
+}
+
+/* Posicionamento das setas puxadas para fora do limite */
+.seta-carrossel.esquerda {
+    left: -15px; 
+}
+
+.seta-carrossel.direita {
+    right: -15px;
+}
+
+/* A lista rolante de ministérios */
+.carrossel-ministerios {
+    display: flex;
+    flex-wrap: nowrap; /* Não quebra linha */
+    gap: 40px; 
+    padding: 20px 10px; 
+    width: 100%;
+    
+    /* Configurações de rolagem invisível */
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.carrossel-ministerios::-webkit-scrollbar {
+    display: none; 
+}
+
+.carrossel-ministerios li {
     width: 120px; 
     text-align: center;
+    flex-shrink: 0; /* Impede os botões de serem esmagados */
 }
 
-#inicio li a {
+.carrossel-ministerios li a {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#inicio li a img {
+.carrossel-ministerios li a img {
     width: 80px; 
     height: 80px;
     object-fit: contain; 
@@ -144,13 +239,12 @@ nav a:hover {
     transition: transform 0.4s ease, filter 0.4s ease; 
 }
 
-#inicio li a:hover img {
+.carrossel-ministerios li a:hover img {
     transform: translateY(-8px) scale(1.05); 
-    /* Glow Marrom Madeira no hover */
-    filter: drop-shadow(0px 15px 20px rgba(139, 87, 51, 0.35)); 
+    filter: drop-shadow(0px 15px 20px rgba(139, 87, 51, 0.35)); /* Glow Marrom Madeira */
 }
 
-#inicio h3 {
+.carrossel-ministerios h3 {
     font-size: 13px;
     font-weight: 800;
     color: #3A3633;
@@ -567,18 +661,151 @@ footer .creditos {
         display: block;
     }
 
-    nav ul { flex-wrap: wrap; gap: 15px; }
-
-    section { padding: 50px 15px !important; }
-
-    .quem-somos-grid { gap: 40px; }
-
-    .dia-linha { flex-direction: column; padding: 30px 0; }
-    .dia-titulo { width: 100%; margin-bottom: 20px; border-bottom: 2px solid #8B5733; padding-bottom: 10px; }
-    .dia-tabela { width: 100%; }
+    /* MENU: Ajuste para o telemóvel - Botão Flutuante Ultra-Compacto */
     
-    #oracao { padding: 60px 15px !important; }
+    /* Estado FECHADO: Vira um botão circular/pílula pequena */
+    nav.nav-flutuante {
+        width: 60px; 
+        padding: 12px 0;
+        border: 1px solid rgba(139, 87, 51, 0.3); 
+        box-shadow: 0 10px 25px rgba(22, 43, 31, 0.4); 
+    }
 
-    .bloco-contatos { gap: 40px; }
-    .item-contato-limpo p { padding-left: 0; margin-top: 5px; }
+    .menu-texto {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: flex; 
+        width: 100%;
+        justify-content: center;
+    }
+
+    .menu-toggle i {
+        font-size: 20px;
+    }
+
+    /* A MÁGICA AQUI: position: absolute tira a lista da página para não a empurrar */
+    nav ul.menu-links { 
+        position: absolute; 
+        top: 100%; /* Fixa a lista imediatamente abaixo do botão do menu */
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0; 
+        overflow: hidden; 
+        opacity: 0; 
+        margin-top: 0;
+        
+        /* O fundo verde passa para a gaveta para dar legibilidade */
+        background-color: rgba(35, 66, 48, 0.98); 
+        box-shadow: 0 15px 30px rgba(22, 43, 31, 0.3);
+    }
+
+    nav ul.menu-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(139, 87, 51, 0.25); 
+    }
+
+    nav ul.menu-links li:last-child {
+        border-bottom: none; 
+    }
+
+    nav ul.menu-links a {
+        display: block;
+        padding: 16px 0; 
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-align: center; 
+        transition: background-color 0.3s; 
+    }
+
+    nav ul.menu-links a:hover {
+        background-color: rgba(139, 87, 51, 0.1); 
+    }
+
+    /* === ESTADOS DE ABERTURA === */
+    
+    /* 1. Quando abre no TOPO (Cabeçalho): Continua colado à barra */
+    nav.menu-aberto {
+        background-color: rgba(35, 66, 48, 0.98); 
+    }
+
+    nav.menu-aberto ul.menu-links {
+        max-height: 400px; 
+        opacity: 1; 
+        border-radius: 0 0 20px 20px; /* Fundo arredondado elegante */
+        border-top: 1px solid rgba(139, 87, 51, 0.3);
+    }
+
+    /* 2. Quando abre FLUTUANDO (Dynamic Island): Estica o botão e separa a gaveta */
+    nav.nav-flutuante.menu-aberto {
+        width: 65%; 
+        border-radius: 25px; 
+        border: 1px solid rgba(139, 87, 51, 0.6); 
+    }
+
+    nav.nav-flutuante.menu-aberto ul.menu-links {
+        max-height: 400px; 
+        opacity: 1; 
+        margin-top: 10px; /* Descola a gaveta do botão */
+        border-radius: 20px; 
+        border: 1px solid rgba(139, 87, 51, 0.6); 
+    }
+
+    /* SEÇÕES GERAIS: Ajuste de respiro lateral e ancoragem perfeita */
+    section { 
+        padding: 50px 15px !important; 
+        scroll-margin-top: 350px; /* Cria uma "parede invisível" que freia a rolagem antes de o menu cobrir o título */
+    }
+
+    .quem-somos-grid { 
+        gap: 40px; 
+    }
+
+    /* CULTOS: Quebra a linha do tempo para empilhar o dia em cima da tabela */
+    .dia-linha { 
+        flex-direction: column; 
+        padding: 30px 0; 
+    }
+    
+    .dia-titulo { 
+        width: 100%; 
+        margin-bottom: 20px; 
+        border-bottom: 2px solid #8B5733; 
+        padding-bottom: 10px; 
+    }
+    
+    .dia-tabela { 
+        width: 100%; 
+    }
+    
+    /* ORAÇÃO */
+    #oracao { 
+        padding: 60px 15px !important; 
+    }
+
+    /* CONTATOS */
+    .bloco-contatos { 
+        gap: 40px; 
+    }
+    
+    .item-contato-limpo p { 
+        padding-left: 0; 
+        margin-top: 5px; 
+    }
+    
+    /* CARROSSEL MINISTÉRIOS: Traz as setas mais para perto dos botões */
+    .seta-carrossel.esquerda { 
+        left: -5px; 
+    }
+    
+    .seta-carrossel.direita { 
+        right: -5px; 
+    }
+    
+    .carrossel-wrapper { 
+        padding: 0 10px; 
+    }
 }
