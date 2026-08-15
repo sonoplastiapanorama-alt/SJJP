@@ -1,135 +1,346 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clube de Desbravadores – Estrela de Aço</title>
+  <title>Clube de Desbravadores - Estrela de Aço</title>
   <link rel="stylesheet" href="style_DBV.css">
 </head>
-
 <body>
 
-  <!-- HEADER / HERO -->
+  <!-- SVG Oculto: Aumentei o raio do caminho (Path) para dar espaço ao texto -->
+  <svg style="width:0; height:0; position:absolute;" aria-hidden="true">
+    <defs>
+      <!-- Caminho redondo recalculado para um círculo maior -->
+      <path id="circulo-cargo" d="M 10, 110 A 100,100 0 1,1 210,110 A 100,100 0 1,1 10,110" />
+    </defs>
+  </svg>
+
+  <!-- HERO SECTION -->
   <header class="hero">
-    <div class="overlay">
-      <h1>Clube de Desbravadores</h1>
-      <h2>Estrela de Aço</h2>
-      <p>“O amor de Cristo me motiva”</p>
+    <div class="hero-content">
+      <div class="badge">⛺ Clube de Desbravadores</div>
+      <h1>Estrela de Aço</h1>
+      <p>Aventura, Fé e Serviço. Preparando líderes para a vida e para a eternidade.</p>
     </div>
   </header>
 
-  <!-- QUEM SOMOS -->
-  <section class="section" id="quem-somos">
-    <h2>Quem Somos</h2>
-    <p>
-      O Clube de Desbravadores Estrela de Aço é um ministério da Igreja Adventista
-      do Sétimo Dia que trabalha com crianças e adolescentes, promovendo o
-      desenvolvimento físico, mental, social e espiritual, fundamentado nos
-      princípios cristãos.
-    </p>
-  </section>
-
-  <!-- HISTÓRIA -->
-  <section class="section dark">
-    <h2>História do Clube</h2>
-    <p>
-      Fundado com o propósito de formar líderes e cidadãos comprometidos com Deus,
-      o clube tem participado de camporis, ações sociais, atividades missionárias
-      e eventos que fortalecem a fé e o caráter dos desbravadores.
-    </p>
-  </section>
-
-  <!-- ATIVIDADES -->
+  <!-- SEÇÃO DA DIRETORIA (CARROSSEL CONTÍNUO) -->
   <section class="section">
-    <h2>Atividades</h2>
-    <div class="cards">
-      <div class="card">🏕️ Acampamentos</div>
-      <div class="card">🧭 Caminhadas</div>
-      <div class="card">📖 Classes e Especialidades</div>
-      <div class="card">✝️ Projetos Missionários</div>
-      <div class="card">🤝 Ações Comunitárias</div>
-      <div class="card">🏆 Camporis</div>
+    <div class="container">
+      <h2 class="section-title">Nossa Liderança</h2>
+      <p class="section-subtitle">A equipe que guia nossos passos nesta grande aventura.</p>
+      
+      <div class="carousel-wrapper">
+        <button class="btn-carousel btn-prev" onclick="moverCarousel(-1)">&#10094;</button>
+        
+        <div class="diretoria-track" id="track-diretoria">
+          
+          <!-- Membro 1 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ DIRETORA ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/alice.jpg" alt="Foto Alice Carvalho">
+               <div class="nome-barra">Alice Carvalho</div>
+            </div>
+          </div>
+
+          <!-- Membro 2 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ DIR. ASSOCIADA ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/ana_luiza.jpg" alt="Foto Ana Luiza">
+               <div class="nome-barra">Ana Luiza</div>
+            </div>
+          </div>
+
+          <!-- Membro 3 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ DIR. ASSOCIADO ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/michel.jpg" alt="Foto Michel">
+               <div class="nome-barra">Michel</div>
+            </div>
+          </div>
+
+          <!-- Membro 4 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ SECRETÁRIA ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/izabelli.jpg" alt="Foto Izabelli">
+               <div class="nome-barra">Izabelli Gambarelli</div>
+            </div>
+          </div>
+
+          <!-- Membro 5 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ TESOUREIRO ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/silas.jpg" alt="Foto Silas">
+               <div class="nome-barra">Silas Gomes</div>
+            </div>
+          </div>
+
+          <!-- Membro 6 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ INSTRUTOR ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/atos.jpg" alt="Foto Atos">
+               <div class="nome-barra">Atos Simas</div>
+            </div>
+          </div>
+
+          <!-- Membro 7 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ INSTRUTORA ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/isabela.jpg" alt="Foto Isabela">
+               <div class="nome-barra">Isabela Simas</div>
+            </div>
+          </div>
+
+          <!-- Membro 8 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ CAPELÃO ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/felipe.jpg" alt="Foto Felipe">
+               <div class="nome-barra">Felipe Duarte</div>
+            </div>
+          </div>
+
+          <!-- Membro 9 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ CONSELHEIRA ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/ingrid.jpg" alt="Foto Ingrid">
+               <div class="nome-barra">Ingrid</div>
+            </div>
+          </div>
+
+          <!-- Membro 10 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ CONSELHEIRO ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/edmundo.jpg" alt="Foto Edmundo">
+               <div class="nome-barra">Edmundo</div>
+            </div>
+          </div>
+
+          <!-- Membro 11 -->
+          <div class="card-membro">
+            <svg class="svg-cargo" viewBox="0 0 220 220">
+               <text font-size="14" font-weight="900" fill="#002D62" letter-spacing="1">
+                  <textPath href="#circulo-cargo" startOffset="25%" text-anchor="middle">★ CONSELHEIRO ★</textPath>
+               </text>
+            </svg>
+            <div class="foto-container">
+               <img src="caminho/para/foto/luiz.jpg" alt="Foto Luiz">
+               <div class="nome-barra">Luiz Fernando</div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="btn-carousel btn-next" onclick="moverCarousel(1)">&#10095;</button>
+      </div>
     </div>
   </section>
 
-  <!-- CLASSES -->
-  <section class="section dark">
-    <h2>Classes</h2>
-    <ul class="lista">
-      <li class="um">Amigo</li>
-      <li class="dois">Companheiro</li>
-      <li class="tres">Pesquisador</li>
-      <li class="quatro">Pioneiro</li>
-      <li class="cinco">Excursionista</li>
-      <li class="seis">Guia</li>
-    </ul>
-  </section>
+  <!-- SEÇÃO DE GALERIA (PASTAS) -->
+  <section class="section bg-escuro">
+    <div class="container">
+      <h2 class="section-title text-gold">Álbuns de Atividades</h2>
+      <p class="section-subtitle text-white">Clique nas pastas para ver as fotos dos nossos eventos.</p>
 
-  <!-- LIDERANÇA -->
-  <section class="section">
-    <h2>Liderança</h2>
-    <div class="lideranca">
-      <div class="lider">Diretor(a): <br>Alice Carvalho</div>
-      <div class="lider">Diretores(as) Associados(as): <br>Ana Luiza e Michel</div>
-      <div class="lider">Secretario(a): <br>Izabelli Gambarelli</div>
-      <div class="lider">Tesoureiro(a): <br>Silas Gomes </div>
-      <div class="lider">Instrutores: <br>Atos Simas e Isabela Simas</div>
-      <div class="lider">Capelão: <br>Felipe Duarte</div>
-      <div class="lider">Conselheiros: <br>Ingrid, Edmundo e Luiz Fernando</div>
-    </div>
-  </section>
+      <div class="pastas-grid">
+        <div class="pasta-album" onclick="abrirAlbum('campori', 'Campori')">
+          <div class="aba-pasta">Campori</div>
+          <div class="corpo-pasta">
+            <img src="caminho/para/capa/campori.jpg" alt="Capa Campori">
+            <span class="icone-lupa">🔍 Ver Fotos</span>
+          </div>
+        </div>
 
-  <!-- CALENDÁRIO -->
-  <section class="section dark">
-    <h2>Calendário</h2>
-    <p>
-      Reuniões semanais, eventos especiais, acampamentos e camporis são organizados
-      ao longo do ano para promover crescimento e integração.
-    </p>
-  </section>
+        <div class="pasta-album" onclick="abrirAlbum('caminhada', 'Caminhada')">
+          <div class="aba-pasta">Caminhada</div>
+          <div class="corpo-pasta">
+            <img src="caminho/para/capa/caminhada.jpg" alt="Capa Caminhada">
+            <span class="icone-lupa">🔍 Ver Fotos</span>
+          </div>
+        </div>
 
-  <!-- UNIFORME 
-  <section class="section">
-    <h2>Uniforme</h2>
-    <p>
-      O uso correto do uniforme representa disciplina, identidade e compromisso
-      com os princípios do Clube de Desbravadores.
-    </p>
-  </section> -->
-
-  <!-- GALERIA -->
-  <section class="section" id="galeria">
-    <h2>Galeria de Atividades</h2>
-
-    <div class="galeria">
-      <div class="foto">
-        <img src="img_dbv/fotos/1280x960_foto_passeio.jpg" alt="Acampamento dos Desbravadores">
-      </div>
-      <div class="foto">
-        <img src="img_dbv/fotos/1200x900_gala.jpg" alt="Caminhada">
-      </div>
-      <div class="foto">
-        <img src="img_dbv/fotos/IMG-20250601-WA0015.jpg" alt="Classe e Especialidades">
+        <div class="pasta-album" onclick="abrirAlbum('investidura', 'Cerimônia de Investidura')">
+          <div class="aba-pasta">Investidura</div>
+          <div class="corpo-pasta">
+            <img src="caminho/para/capa/investidura.jpg" alt="Capa Investidura">
+            <span class="icone-lupa">🔍 Ver Fotos</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  
-  <!-- CONTATO -->
-  <section class="section white">
-    <h2>Contato</h2>
-    <p>Igreja Adventista do Sétimo Dia – Jardim Panorama</p>
-    <p>📍 Rua Serra do Mar, 740 - Jardim Panorama - Ipatinga/MG</p>
-    <p>📞 WhatsApp: (33) 99947-9005</p>
-  </section>
 
+  <!-- MODAL DA GALERIA -->
+  <div id="modal-galeria" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar-modal" onclick="fecharAlbum()">&times; Fechar</span>
+      <h2 id="titulo-modal" class="modal-titulo">Nome do Álbum</h2>
+      <div id="grid-fotos-modal" class="modal-grid"></div>
+    </div>
+  </div>
 
-  <!-- FOOTER -->
+  <!-- RODAPÉ -->
   <footer>
-    <p>© 2026 Clube de Desbravadores Estrela de Aço</p>
-    <p>Igreja Adventista do Sétimo Dia</p>
+    <p>© 2026 Clube Estrela de Aço - Sempre Alerta!</p>
   </footer>
 
-</body>
+  <!-- SCRIPT JAVASCRIPT -->
+  <script>
+    /* LÓGICA DO CARROSSEL */
+    const track = document.getElementById('track-diretoria');
+    let isMoving = false;
 
+    function moverCarousel(dir) {
+      if(isMoving) return;
+      isMoving = true;
+      
+      const itemWidth = track.firstElementChild.offsetWidth + 30; 
+
+      if(dir === 1) { 
+        track.style.transition = "transform 0.4s ease-in-out";
+        track.style.transform = `translateX(-${itemWidth}px)`;
+        
+        setTimeout(() => {
+          track.style.transition = "none";
+          track.appendChild(track.firstElementChild); 
+          track.style.transform = "translateX(0)";
+          isMoving = false;
+        }, 400);
+
+      } else { 
+        track.prepend(track.lastElementChild); 
+        track.style.transition = "none";
+        track.style.transform = `translateX(-${itemWidth}px)`;
+        
+        track.offsetHeight; 
+        
+        track.style.transition = "transform 0.4s ease-in-out";
+        track.style.transform = "translateX(0)";
+        
+        setTimeout(() => {
+          isMoving = false;
+        }, 400);
+      }
+    }
+
+    let startX = 0;
+    let isDragging = false;
+
+    track.addEventListener('mousedown', (e) => {
+      startX = e.clientX;
+      isDragging = true;
+      track.style.cursor = 'grabbing';
+    });
+    window.addEventListener('mouseup', (e) => {
+      if(!isDragging) return;
+      isDragging = false;
+      track.style.cursor = 'grab';
+      let diff = startX - e.clientX;
+      if(diff > 40) moverCarousel(1); 
+      else if(diff < -40) moverCarousel(-1); 
+    });
+
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    }, {passive: true});
+    track.addEventListener('touchend', (e) => {
+      if(!isDragging) return;
+      isDragging = false;
+      let diff = startX - e.changedTouches[0].clientX;
+      if(diff > 40) moverCarousel(1);
+      else if(diff < -40) moverCarousel(-1);
+    }, {passive: true});
+
+    /* LÓGICA DA GALERIA DE PASTAS */
+    const fotosDosAlbuns = {
+      'campori': ['caminho/para/fotos/campori/foto1.jpg', 'caminho/para/fotos/campori/foto2.jpg'],
+      'caminhada': ['caminho/para/fotos/caminhada/foto1.jpg'],
+      'investidura': ['caminho/para/fotos/investidura/foto1.jpg', 'caminho/para/fotos/investidura/foto2.jpg']
+    };
+
+    function abrirAlbum(idAlbum, titulo) {
+      const modal = document.getElementById('modal-galeria');
+      const tituloModal = document.getElementById('titulo-modal');
+      const gridModal = document.getElementById('grid-fotos-modal');
+
+      tituloModal.innerText = titulo;
+      gridModal.innerHTML = '';
+
+      const fotos = fotosDosAlbuns[idAlbum];
+      if (fotos && fotos.length > 0) {
+        fotos.forEach(link => {
+          const imgElement = document.createElement('img');
+          imgElement.src = link;
+          imgElement.alt = "Foto de atividade";
+          gridModal.appendChild(imgElement);
+        });
+      } else {
+        gridModal.innerHTML = '<p>Nenhuma foto encontrada neste álbum.</p>';
+      }
+      modal.style.display = 'flex';
+    }
+
+    function fecharAlbum() {
+      document.getElementById('modal-galeria').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal-galeria');
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
 </html>
